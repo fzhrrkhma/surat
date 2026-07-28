@@ -23,3 +23,27 @@ setInterval(() => {
         heart.remove();
     }, 6000);
 }, 300);
+const envelope = document.getElementById("envelope");
+
+envelope.addEventListener("click", () => {
+    envelope.classList.toggle("open");
+});
+
+const hearts = document.querySelector(".hearts");
+
+function createHeart(){
+    const heart = document.createElement("span");
+
+    heart.innerHTML = "💙";
+    heart.className = "heart";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (18 + Math.random()*20) + "px";
+
+    hearts.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },5000);
+}
+
+setInterval(createHeart,300);
